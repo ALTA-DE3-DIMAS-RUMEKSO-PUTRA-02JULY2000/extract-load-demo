@@ -1,5 +1,5 @@
 from google.cloud import bigquery
-import os
+# import os
 
 
 def write_to_bigquery(table_id, rows_to_insert):
@@ -12,10 +12,13 @@ def write_to_bigquery(table_id, rows_to_insert):
         print('Successfully insert data')
 
 
-project_id = os.getenv('PROJECT_ID')
-table_id = f'{project_id}.my_dataset.my_table'
+project_id = 'project-428209'
+table_id = f'{project_id}.Project_MasGal.my_table'
 rows_to_insert = [
     (1, 'Phred Phlyntstone', '2023-11-10 08:00:00'),
-    (2, 'Wylma Phlyntstone', '2023-11-10 08:00:00')
+    (2, 'Wylma Phlyntstone', '2023-11-10 09:00:00'),
+    (3, 'Wylma', '2023-11-10 10:00:00'),
+    (4, 'Phlyntstone', '2023-11-10 11:00:00'),
+    (5, 'maPhlyn', '2023-11-10 12:00:00')
 ]
 write_to_bigquery(table_id, rows_to_insert)
